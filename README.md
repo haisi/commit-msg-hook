@@ -8,7 +8,7 @@ This repo contains a basic implementation of a commit-msg hook and a minimal set
 Softlink the `commit-msg.py` to the `.git/hooks/commit-msg` directory of your git-project.
 
 ```bash
-ln --symbolic --force ./commit-msg.py your/path/your-project/.git/hooks/commit-msg
+ln -s -f ./commit-msg.py your/path/your-project/.git/hooks/commit-msg
 ```
 
 Possiblity, you have to make the script executable by running `chmod u+x commit-msg.py`.
