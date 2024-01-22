@@ -4,11 +4,15 @@ import sys
 import re
 
 rules = """
-# You didn't follow the git commit message rules!
+# Commit Message Rules
+# 1. Start with the ticket key, e.g. DAZWVS-1234
+# 2. Followed by a empty character
+# 3. Followed by either: Fix, Add, Expand, Chore, Remove, Stop, Start, Contract, Doc, Tweak, Optimize, Improve
+# 4. Followed by a space and any character except dot and comma
 """
 
 keys = "|".join(["DAZWVS", "DMBA"])
-prompts = "|".join(["Fix", "Add", "Expand", "Chore", "Remove", "Stop", "Start", "Contract", "Doc", "Tweak", "Optimize"])
+prompts = "|".join(["Fix", "Add", "Expand", "Chore", "Remove", "Stop", "Start", "Contract", "Doc", "Tweak", "Optimize", "Improve"])
 forbidden = "".join([".", ","])
 
 # ^(DAZWVS|DMBA)-(\d{4,5})\s(Add|Fix)\s[^.,]*$
